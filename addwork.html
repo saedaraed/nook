@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Add Work</title>
+    <style>
+        .lim {
+            display: none;
+        }
+
+        .personChat {
+
+            width: 70%;
+            background-color: rgb(255, 255, 255);
+            margin: 0 auto;
+            height: 75vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0;
+            /* display: none; */
+            border-radius: 15px;
+        }
+
+        .personChat .left {
+            overflow-y: scroll;
+            height: 74vh;
+        }
+
+        .left::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        .personChat .left h5 {
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .personChat .left ul {
+            padding: 10px;
+            /* height: 350px;
+             
+              overflow: hidden; */
+        }
+
+        .personChat .left ul li a {
+            color: #000000;
+            text-decoration: none;
+            font-size: small;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .personChat .left .messageCont {
+            padding: 10px 0px;
+        }
+
+        .personChat .left ul .titleMessage {
+            margin-bottom: 0;
+            height: 50px;
+            overflow: hidden;
+            /* background-color: rgb(201, 24, 24); */
+
+        }
+
+        .personChat .left ul .sec .titleMessage a {
+            color: #D4AF37;
+            text-decoration: none;
+        }
+
+        .personChat .left ul li .icon .fa-question-circle {
+            font-size: xx-large;
+            margin-top: 10px;
+
+        }
+
+        .personChat .left ul li {
+            padding: 0 5px;
+        }
+
+        .personChat .left ul li:hover {
+            background-color: #817f76;
+        }
+
+        .personChat .left ul .sec .icon .fa-question-circle {
+            color: #D4AF37;
+
+        }
+
+        .personChat .left ul li .messageCont span {
+            font-weight: bold;
+            font-size: 5px;
+            float: right;
+            text-align: right;
+            margin-top: -5px;
+            /* padding-bottom: 5px; */
+            /* margin-top: 10px; */
+            width: 100%;
+        }
+
+        @media (max-width:992px) {
+
+            .personChat .conv {
+                display: none;
+                width: 100%;
+            }
+
+            .personChat .left {
+                width: 50%;
+
+            }
+        }
+
+        .personChat .coversation .titleChat {
+            padding: 10px 0px 0px 0px;
+            background-color: #d9d9d9;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .personChat .coversation .titleChat h5 {
+            text-align: center;
+
+            width: 100%;
+        }
+
+        .personChat .coversation .titleChat .list {
+            padding-right: 10px;
+        }
+
+        .personChat .coversation .titleChat .list ul li {
+            line-height: .5;
+        }
+
+
+
+        .personChat .coversation {
+            width: 100%;
+        }
+
+        .personChat .coversation .inpu {
+            display: flex;
+            padding: 10px 20px;
+            background-color: #d9d9d9;
+            justify-content: space-between;
+            border-radius: 5px;
+
+        }
+
+
+        .personChat .coversation .inpu .group {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+            width: 95%;
+            border-radius: 10px;
+
+            background-color: #ffffff;
+        }
+
+
+        .personChat .coversation .inpu .fa-smile-beam {
+            font-size: x-large;
+            margin-top: 5px;
+
+        }
+
+
+        .personChat .coversation .inpu .plane {
+            background-color: black;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: relative;
+            margin-left: 5px;
+        }
+
+
+        .personChat .coversation .inpu a .fa-paper-plane {
+            font-size: large;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #d9d9d9;
+            padding: 0;
+        }
+
+
+        .personChat .coversation .inpu a .fa-images {
+            font-size: x-large;
+            margin-top: 5px;
+        }
+
+        @media (max-width:768px) {
+
+            .personChat .coversation .inpu .fa-smile-beam {
+                font-size: large;
+
+            }
+
+
+            .personChat .coversation .inpu a .fa-images {
+                font-size: medium;
+            }
+
+
+            .personChat .coversation .inpu .plane {
+                width: 25px;
+                height: 25px;
+            }
+
+
+            .personChat .coversation .inpu a .fa-paper-plane {
+                font-size: large;
+            }
+        }
+
+        @media (max-width:992px) {
+
+            .personChat .coversation .inpu .fa-smile-beam {
+                font-size: x-large;
+
+            }
+
+
+            .personChat .coversation .inpu a .fa-images {
+                font-size: large;
+            }
+
+
+            .personChat .coversation .inpu .plane {
+                width: 25px;
+                height: 25px;
+            }
+
+
+            .personChat .coversation .inpu a .fa-paper-plane {
+                font-size: large;
+            }
+        }
+
+
+        .personChat .coversation .inpu a {
+            color: rgb(58, 57, 57)
+        }
+
+
+        .personChat .coversation .inpu input {
+            width: 90%;
+            /* border-radius: 10px; */
+            outline: none;
+
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- start header -->
+    <div class="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="img/nook2.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="categoryy.html">Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="community.html">Community</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <hr style="color: #817f76;">
+                    <form class="d-flex">
+                        <div class="dropdown">
+                            <div class="profile" class=" dropdown-toggle" type="button" id="dropdownMenu2"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="img/avtar.jpg" alt="">
+                            </div>
+
+                            <ul class="dropdown-menu mt-2" aria-labelledby="dropdownMenu2" style="margin-left: -50px;">
+                                <li><i class="fas fa-user"></i><button class="dropdown-item"
+                                        type="button"><a href="profile.html"> Profile</a></button>
+                                </li>
+                                <li><i class="fas fa-envelope"></i><button class="dropdown-item"
+                                        type="button"> <a href="">Inbox</a></button></li>
+                                        <li><i class="fa fa-heart"></i><button class="dropdown-item"
+                                            type="button"> <a href="#">favourite work</a></button></li>
+                                <hr>
+                                <li><i class="far fa-edit"></i><button class="dropdown-item" type="button"> <a href="editProfile.html">Edit  Profile</a>
+                                       </button></li>
+                                <li><i class="fas fa-question-circle"></i><button class="dropdown-item"
+                                        type="button"> <a href="#"> Help</a></button></li>
+                                <hr>
+                                <li><i class="fas fa-sign-out-alt"></i><button class="dropdown-item"
+                                        type="button"> Logout</button></li>
+                            </ul>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <!-- <div class="dropdown messages">
+                    <div class="inbox" class=" dropdown-toggle" id="dropdownMenu2" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+
+
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <ul>
+                            <li class="d-flex sec">
+                                <div class="icon">
+                                    <i class="fas fa-question-circle"></i>
+
+                                </div>
+                                <div class="messageCont">
+                                    <p class="titleMessage"><a href="#"> Inquiries about the Night Stars painting</a>
+                                    </p>
+                                    <p class="par">You have a sale offer for the Night Stars painting, and the price has
+                                        been agreed upon with the customer </p>
+                                    <span>03:12am</span>
+                                </div>
+                            </li>
+                            <hr>
+                            <li class="d-flex">
+                                <div class="icon">
+                                    <i class="fas fa-question-circle"></i>
+
+                                </div>
+                                <div class="messageCont">
+                                    <p class="titleMessage"><a href="#"> Inquiries about the Night Stars painting</a>
+                                    </p>
+                                    <p class="par">You have a sale offer for the Night Stars painting, and the price has
+                                        been agreed upon with the customer </p>
+                                    <span>03:12am</span>
+                                </div>
+                            </li>
+                            <hr>
+                            <li class="d-flex">
+                                <div class="icon">
+                                    <i class="fas fa-question-circle"></i>
+
+                                </div>
+                                <div class="messageCont">
+                                    <p class="titleMessage"><a href="#"> Inquiries about the Night Stars painting</a>
+                                    </p>
+                                    <p class="par">You have a sale offer for the Night Stars painting, and the price has
+                                        been agreed upon with the customer </p>
+                                    <span>03:12am</span>
+                                </div>
+                            </li>
+                            <hr>
+                            <li class="d-flex ">
+                                <div class="icon">
+                                    <i class="fas fa-question-circle"></i>
+
+                                </div>
+                                <div class="messageCont">
+                                    <p class="titleMessage"><a href="#"> Inquiries about the Night Stars painting</a>
+                                    </p>
+                                    <p class="par">You have a sale offer for the Night Stars painting, and the price has
+                                        been agreed upon with the customer </p>
+                                    <span>03:12am</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="view text-center">
+                         
+                            <a href="#"> View all messages</a>
+                        </div>
+                    </div>
+
+                </div> -->
+
+            </div>
+        </nav>
+    </div>
+    <!-- end header -->
+    <div class="lim">
+        <div class="row personChat m-0 p-0">
+            <div class="col-3 left m-0 p-0">
+                <h5>All Messages</h5>
+                <hr>
+                <ul>
+                    <li class="d-flex sec">
+                        <div class="icon">
+                            <i class="fas fa-question-circle"></i>
+
+                        </div>
+                        <div class="messageCont">
+                            <p class="titleMessage"><a href="#"> Inquiries about the Night Stars painting</a>
+                            </p>
+                            <!-- <p class="par">You have a sale offer for the Night Stars painting, and the price has
+                            been agreed upon with the customer </p> -->
+                            <span>03:12am</span>
+                        </div>
+                    </li>
+                    <!-- <hr> -->
+                    <li class="d-flex">
+                        <div class="icon">
+                            <i class="fas fa-question-circle"></i>
+
+                        </div>
+                        <div class="messageCont">
+                            <p class="titleMessage"><a href="#"> Inquiries about the Night Stars painting hello every
+                                    oneee</a>
+                            </p>
+                            <!-- <p class="par">You have a sale offer for the Night Stars painting, and the price has
+                            been agreed upon with the customer </p> -->
+                            <span>03:12am</span>
+                        </div>
+                    </li>
+                    <!-- <hr> -->
+                    <li class="d-flex">
+                        <div class="icon">
+                            <i class="fas fa-question-circle"></i>
+
+                        </div>
+                        <div class="messageCont">
+                            <p class="titleMessage"><a href="#"> Inquiries about the Night Stars painting </a></p>
+                            <span>03:12am</span>
+                            <!-- <p class="par">You have a sale offer for the Night Stars painting, and the price has
+                            been agreed upon with the customer </p> -->
+
+                        </div>
+                    </li>
+                    <li class="d-flex">
+                        <div class="icon">
+                            <i class="fas fa-question-circle"></i>
+
+                        </div>
+                        <div class="messageCont">
+                            <p class="titleMessage"><a href="#"> Inquiries about the Night Stars painting </a></p>
+                            <span>03:12am</span>
+                            <!-- <p class="par">You have a sale offer for the Night Stars painting, and the price has
+                            been agreed upon with the customer </p> -->
+
+                        </div>
+                    </li>
+                    <li class="d-flex">
+                        <div class="icon">
+                            <i class="fas fa-question-circle"></i>
+
+                        </div>
+                        <div class="messageCont">
+                            <p class="titleMessage"><a href="#"> Inquiries about the Night Stars painting </a></p>
+                            <span>03:12am</span>
+                            <!-- <p class="par">You have a sale offer for the Night Stars painting, and the price has
+                            been agreed upon with the customer </p> -->
+
+                        </div>
+                    </li>
+                    <li class="d-flex">
+                        <div class="icon">
+                            <i class="fas fa-question-circle"></i>
+
+                        </div>
+                        <div class="messageCont">
+                            <p class="titleMessage"><a href="#"> Inquiries about the Night Stars painting </a></p>
+                            <span>03:12am</span>
+                            <!-- <p class="par">You have a sale offer for the Night Stars painting, and the price has
+                            been agreed upon with the customer </p> -->
+
+                        </div>
+                    </li>
+                    <li class="d-flex">
+                        <div class="icon">
+                            <i class="fas fa-question-circle"></i>
+
+                        </div>
+                        <div class="messageCont">
+                            <p class="titleMessage"><a href="#"> Inquiries about the Night Stars painting </a></p>
+                            <span>03:12am</span>
+                            <!-- <p class="par">You have a sale offer for the Night Stars painting, and the price has
+                            been agreed upon with the customer </p> -->
+
+                        </div>
+                    </li>
+
+
+
+                </ul>
+            </div>
+            <div class="col-9 conv m-0 p-0 ">
+                <div class="coversation">
+                    <div class="titleChat">
+                        <form class="d-flex">
+                            <div class="dropdown">
+                                <div class="list" class=" dropdown-toggle" type="button" id="dropdownMenu2"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <ul>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+
+                                <ul class="dropdown-menu mt-2" aria-labelledby="dropdownMenu2"
+                                    style="margin-left: -50px;">
+                                    <li><button class="dropdown-item" type="button">Group media</button>
+                                    </li>
+                                    <li><button class="dropdown-item sea" type="button">Search</button></li>
+
+                                    <li><button class="dropdown-item" type="button">Wallpaper</button></li>
+                                    <li><button class="dropdown-item" type="button">Clear chat</button></li>
+
+                                </ul>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div id='messages'>
+                        <div class="row">
+                            <div class="d-flex justify-content-start width-100 mb-2">
+                                <div class="sender message">
+
+                                    <div class="msg send">
+
+                                        <p class="par">hello every one </p>
+                                        <span class="time">08:12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-start width-100 mb-2">
+                                <div class="sender message">
+
+                                    <div class="msg send">
+
+                                        <p class="par">hello every one </p>
+                                        <span class="time">08:12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-start width-100 mb-2">
+                                <div class="sender message">
+
+                                    <div class="msg send">
+
+                                        <p class="par">hello every one
+                                            fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+                                        </p>
+                                        <span class="time">08:12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-end width-100 mb-2">
+                                <div class="reader message " style="display: flex;  width: 50%;">
+
+                                    <div class="msg read">
+                                        <p class="par">hi sara , how are you?</p>
+                                        <span class="time">08:12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-start width-100 mb-2">
+                                <div class="sender message">
+
+                                    <div class="msg send">
+
+                                        <p class="par">hello every one </p>
+                                        <span class="time">08:12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-end width-100 mb-2">
+                                <div class="reader message " style="display: flex;  width: 50%;">
+
+                                    <div class="msg read">
+                                        <p class="par">hi sara , how are you?</p>
+                                        <span class="time">08:12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-end width-100 mb-2">
+                                <div class="reader message " style="display: flex;  width: 50%;">
+
+                                    <div class="msg read">
+                                        <p class="par">hi sara , how are you?</p>
+                                        <span class="time">08:12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-end width-100 mb-2">
+                                <div class="reader message " style="display: flex;  width: 50%;">
+
+                                    <div class="msg read">
+                                        <p class="par">hi sara , how are you?</p>
+                                        <span class="time">08:12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inpu">
+                        <div class="group">
+                            <a href="#"><i class="far fa-smile-beam"></i></a>
+
+                            <input type="text" placeholder="type a message...">
+                            <a href="#"><i class="fas fa-images"></i></a>
+                        </div>
+
+                        <div class="plane"><a href="#"><i class="fas fa-paper-plane"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="addWork">
+        <div class="add">
+            <h6>Add Work</h6>
+
+
+
+            <form>
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Add a suitable title</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Add a short description of the work</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPrice" class="form-label">Price ($)</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPrice" class="form-label">Art Category</label>
+
+                        <select class="form-select" aria-label="Default select example" required>
+                            <option selected>Open this select menu</option>
+                            <option value="1">Painting</option>
+                            <option value="1">Photography</option>
+                            <option value="1">Fashion Design</option>
+                            <option value="4">Embroidery</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPrice" class="form-label">painting size (cm)</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="downloadImage ">
+                        <div class="download">
+                            <a class="btn btn-social mx-1" href="#!"><i class="fas fa-image"></i></a>
+                            <a href="#">Download the image</a>
+                        </div>
+                    </div>
+
+
+                    <div class="but text-center">
+                        <button class="btn  bg-light"><a class="okkk" href="#">Add Work</a></button>
+                    </div>
+                </form>
+            </form>
+        </div>
+    </div>
+    <div class="successfully">
+        <P>Work added successfully</P>
+        <a href="photoDetail.html">Click to see the work </a>
+    </div>
+    <br> <br> <br>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>About</h6>
+                    <p class="text-justify">The site aims to spread artistic culture
+                        around the world, marketpaintings
+                        through the site, and exchange
+                        experiences between talented people.</p>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Categories</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Painting</a></li>
+                        <li><a href="#">Photography</a></li>
+                        <li><a href="#"> Embroidery</a></li>
+                        <li><a href="#">Fshion Design</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="http://scanfcode.com/about/">Home</a></li>
+                        <li><a href="http://scanfcode.com/contact/">About</a></li>
+                        <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Category</a></li>
+                        <li><a href="http://scanfcode.com/privacy-policy/">Community</a></li>
+                        <li><a href="http://scanfcode.com/sitemap/">Blog</a></li>
+                        <li><a href="http://scanfcode.com/sitemap/">Contact</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
+                        <a href="#">Saeda Raed</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="iconSocial">
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i
+                                class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i
+                                class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i
+                                class="fab fa-fw fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"
+        integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg=="
+        crossorigin="anonymous"></script>
+    <script src="js/main.js">
+    </script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

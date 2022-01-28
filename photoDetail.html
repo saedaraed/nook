@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>photo Details</title>
+</head>
+
+<body>
+   <!-- start header -->
+   <div class="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="img/nook2.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categoryy.html">Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="community.html">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex">
+                    <button class="btn" type="submit"><a href="login.html">Sign In</a></button>
+
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- end header -->
+    <!-- photoDetails -->
+    <div class="photoDetails">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-center imageCont" >
+                <div class="image">
+                    <img style=" width: 100%;" src="img/art5.jpg"  alt="">
+                </div>
+                <br>
+              
+                <a data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Click to see the image in full size</a> >
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <img src="img/art5.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 details ">
+                <h3>art digital</h3>
+                <div class="det">
+
+
+                    <h4>Size : <span>50 x 70cm</span> </h4>
+                    <h4>Class : <span>Painting</span></h4>
+                    <h4>Name : <span><a href="#" style="color: #D4AF37; text-decoration: none;">Sara Khaled</a></span></h4>
+                    <h4>Price : <span class="price">50$</span></h4>
+
+
+                    <h4>Description : <span>Digital portrait drawing of a girl</span></h4>
+                    <!-- <div class="hint-star star">
+                    <i class="fa fa-star" aria-hidden="true"></i> 
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                    </div>
+                         -->
+                    <!-- <div class="editButton">
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn  ">Edit</button>
+                            </div>
+                            
+                            <div class="col-6">
+                                <button class="btn delete " >Delete</button>
+                            </div>
+                        </div>
+                 
+                        
+                    </div> -->
+                    <br>
+                    <div class="cont text-center">
+                        <button class="btn ">Contact</button>  
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class=" share">
+            <span>share the art</span>
+
+            <input type="text" value="https://nook.com/portfolio/37789">
+            <div class="iconSocial">
+                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>About</h6>
+                    <p class="text-justify">The site aims to spread artistic culture
+                        around the world, marketpaintings
+                        through the site, and exchange 
+                       experiences between talented people.</p>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Categories</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Painting</a></li>
+                        <li><a href="#">Photography</a></li>
+                        <li><a href="#">  Embroidery</a></li>
+                        <li><a href="#">Fshion Design</a></li>
+                
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="http://scanfcode.com/about/">Home</a></li>
+                        <li><a href="http://scanfcode.com/contact/">About</a></li>
+                        <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Category</a></li>
+                        <li><a href="http://scanfcode.com/privacy-policy/">Community</a></li>
+                        <li><a href="http://scanfcode.com/sitemap/">Blog</a></li>
+                        <li><a href="http://scanfcode.com/sitemap/">Contact</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
+             <a href="#">Saeda Raed</a>.
+                </p>
+              </div>
+    
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="iconSocial">
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+    </footer>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
+    <script src="js/main.js">
+    </script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
